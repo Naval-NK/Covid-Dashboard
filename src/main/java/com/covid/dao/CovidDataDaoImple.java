@@ -98,7 +98,7 @@ public class CovidDataDaoImple implements CovidDataDao {
 		String sql = "select total_cases from coviddata where country = 'world' ";
 		
 		int i = jdbc.queryForObject(sql, Integer.class);
-		System.out.println("total cases from db -> " + i);
+//		System.out.println("total cases from db -> " + i);
 		return i;
 	}
 

@@ -21,7 +21,10 @@ public class ApiServiceImple implements ApiService {
 		
 		//Getting Response in Json and accessing it with rows Data object
 		String url="https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search";
+		
+		// a client to perform HTTP request	
 		RestTemplate restTemplate = new RestTemplate();
+		//A method to getObject of SpecifiedType class with client RootTemplateObject		
 		RootData resp = restTemplate.getForObject(url, RootData.class);
 		
 		//From root to jsonData Access Rows which is List<> of details about Country's
@@ -39,7 +42,8 @@ public class ApiServiceImple implements ApiService {
 					System.out.println("Your data has bee Updated");
 				}else {
 					System.out.println("Your Data Is Upto Date");
-          }
+				}
+				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
